@@ -1,4 +1,4 @@
 ginkoMistakeBot
 ===============
 
-クッソワロタｗｗｗｗｗｗｗｗｗ
+https://twitter.com/GinkoMistakeJP
