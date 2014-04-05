@@ -12,8 +12,8 @@ class Bot
 
   def initialize
     @natto = Natto::MeCab.new
-    @sites = readdata("./lib/data/sites.csv") #　　RSSの取得元を読み込む
-    @nouns = readdata("./lib/nouns.csv").uniq #　　抽出しておいた名詞リストを読み込む
+    @sites = readdata("./lib/data/sites.csv")
+    @nouns = readdata("./lib/nouns.csv").uniq 
     @rest_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = Const::CONSUMER_KEY
       config.consumer_secret     = Const::CONSUMER_SECRET
@@ -23,7 +23,7 @@ class Bot
   end
 
   def makeSimilarWord(word)
-    @nouns = extractJapanese(@nouns)　#　　名詞リストから日本語のものだけを抽出
+    @nouns = extractJapanese(@nouns)
     @nouns.delete_if{|noun| ((noun == word) or !(noun.length == word.length)) }
     nouns = []
     60.times{nouns.push @nouns[-@nouns.length/2,60].sample}
